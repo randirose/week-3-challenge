@@ -2,22 +2,24 @@
 // Declare object for user's choices on password requirements
 var pwChoices = {
   lowercase: "abcdefghijklmnopqrstuvqxyz",
-  uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  uppercase: this[lowercase].toUpperCase(),
   number: "0123456789",
   specialChar: "!@#$%^&*"
 };
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+console.log(pwChoices.uppercase);
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// // Get references to the #generate element
+// var generateBtn = document.querySelector("#generate");
 
-  passwordText.value = password;
+// // Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
-}
+//   passwordText.value = password;
+
+// }
 
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// // Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
