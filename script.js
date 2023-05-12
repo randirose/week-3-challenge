@@ -1,6 +1,11 @@
 // Assignment code here
-
-
+// Declare object for user's choices on password requirements
+var pwChoices = {
+  lowercase: "abcdefghijklmnopqrstuvqxyz",
+  uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  number: "0123456789",
+  specialChar: "!@#$%^&*"
+};
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -12,6 +17,7 @@ function writePassword() {
   passwordText.value = password;
 
 }
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
