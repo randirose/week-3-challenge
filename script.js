@@ -24,7 +24,7 @@ function generatePassword() {
       password += userPasswordChoices.lowercase;
       };
     for (i = 0; i < userLength; i++) {
-      password += password[Math.floor(Math.random() * userLength)]
+      password += userPasswordChoices[Math.floor(Math.random() * userLength)]
     }
     return password;
     }
