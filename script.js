@@ -17,21 +17,21 @@ function generatePassword() {
     // return ends the function right here
   }
   else {
+    var password = "";
     // rest of the function will go here, once they've selected a valid password length
     // user confirms if they want lowercase letters in their password
     var userLowercase = confirm("Press 'OK' if you want to include lowercase letters in your password. Press 'CANCEL' if you do not");
     if (userLowercase) {
-      userPasswordChoices.lowercase += password;
+      password += userPasswordChoices.lowercase;
       };
-      var password = "";
     for (i = 0; i < userLength; i++) {
-      password += userPasswordChoices[Math.floor(Math.random() * userLength)]
+      password[Math.floor(Math.random() * userLength)]
     }
     return password;
     }
     
   }
-  
+  console.log(password);
 
 
 // Get references to the #generate element
