@@ -21,8 +21,9 @@ function generatePassword() {
     // user confirms if they want lowercase letters in their password
     var userLowercase = confirm("Press 'OK' if you want to include lowercase letters in your password. Press 'CANCEL' if you do not");
     if (userLowercase) {
-      password += userPasswordChoices.lowercase;
+      userPasswordChoices.lowercase += password;
       };
+      var password = "";
     for (i = 0; i < userLength; i++) {
       password += userPasswordChoices[Math.floor(Math.random() * userLength)]
     }
