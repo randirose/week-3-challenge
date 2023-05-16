@@ -1,6 +1,6 @@
 // Assignment code here
 // Declare object for user's choices on password requirements
-var pwUserChoices = {
+var userPasswordChoices = {
   lowercase: "abcdefghijklmnopqrstuvqxyz",
   uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
   number: "0123456789",
@@ -18,7 +18,15 @@ function generatePassword() {
   }
   else {
     // rest of the function will go here, once they've selected a valid password length
+    // user confirms if they want lowercase letters in their password
+    var userLowercase = confirm("Press 'OK' if you want to include lowercase letters in your password. Press 'CANCEL' if you do not");
+    if (userLowercase) {
+      for (i=0; i<userLength; i++) {
+        userPasswordChoices.lowercase += result;
+      }
+    }
   }
+  return password;
 }
 
 // Get references to the #generate element
