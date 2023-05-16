@@ -26,14 +26,14 @@ function generatePassword() {
     var password = "";
     var userPassword = "";
     
-
+    alert("Please choose at least 1 of the following options to include in your password. Press 'OK' to continue.")
     // user confirms if they want lowercase letters in their password, if they do, empty string userPassword concatenates (adds to the end) the lowercase string (property of userPasswordChoices object)
     var userLowercase = confirm("Press 'OK' if you want to include lowercase letters in your password. Press 'CANCEL' if you do not");
     if (userLowercase) {
       userPassword += userPasswordChoices.lowercase;
       };
     // user confirms if they want uppercase letters in their password, if they do, empty string userPassword concatenates (adds to the end) the uppercase string (property of userPasswordChoices object)
-    var userUppercase = confirm("Press 'OK' if you want to include uppercase letters in your password. Press 'CANCEL' if you do not");
+    var userUppercase = confirm("Press 'OK' if you want to include UPPERCASE letters in your password. Press 'CANCEL' if you do not");
     if (userUppercase) {
       userPassword += userPasswordChoices.uppercase;
     }
@@ -48,11 +48,11 @@ function generatePassword() {
     }
 
     // if statement, adding condition that says if the user doesn't select any character types, they will receive an alert telling them they must choose at least 1 type, and kicks them out of the function
-    if (userLowercase !== true && userUppercase !== true && userNumber !== true && userSpecialChar !== true) {
+    if (!userLowercase && !userUppercase && !userNumber && !userSpecialChar) {
       alert("You must choose at least one character type for your password, please start again.");
       return;
     }
-    
+
     // now that userPassword has concatenated all the strings together (that the user said they wanted to include), we can use it in a with the Math.random function, multiplying it by the full length of the concatenated userPassword string to generate a random string to then use in the for loop, which keeps it to the user-requested length
     for (i = 0; i < userLength; i++) {
       let randomPassword = Math.floor(Math.random() * userPassword.length);
