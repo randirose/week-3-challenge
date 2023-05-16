@@ -25,19 +25,19 @@ function generatePassword() {
     // declare password variable as empty string, and another variable userPassword to concatenate property strings from above onto before randomizing
     var password = "";
     var userPassword = "";
-    
-    alert("Please choose at least 1 of the following options to include in your password. Press 'OK' to continue.")
-    // user confirms if they want lowercase letters in their password, if they do, empty string userPassword concatenates (adds to the end) the lowercase string (property of userPasswordChoices object)
+
+    // alert to let user know they must choose at least 1 character type
+    alert("Please choose at least 1 of the following options to include in your password. Press 'OK' to continue.");
+
+    // user confirms if they want each character type in their password, if they do, empty string userPassword concatenates (adds to the end) the selected string (property of userPasswordChoices object)
     var userLowercase = confirm("Press 'OK' if you want to include lowercase letters in your password. Press 'CANCEL' if you do not");
     if (userLowercase) {
       userPassword += userPasswordChoices.lowercase;
       };
-    // user confirms if they want uppercase letters in their password, if they do, empty string userPassword concatenates (adds to the end) the uppercase string (property of userPasswordChoices object)
     var userUppercase = confirm("Press 'OK' if you want to include UPPERCASE letters in your password. Press 'CANCEL' if you do not");
     if (userUppercase) {
       userPassword += userPasswordChoices.uppercase;
     }
-    // user confirms if they want numbers in their password, if they do, empty string userPassword concatenates (adds to the end) the numbers string (property of userPasswordChoices object)
     var userNumber = confirm("Press 'OK' if you want to include numbers in your password. Press 'CANCEL' if you do not");
     if (userNumber) {
       userPassword += userPasswordChoices.number;
