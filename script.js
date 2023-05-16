@@ -42,14 +42,16 @@ function generatePassword() {
     if (userNumber) {
       userPassword += userPasswordChoices.number;
     }
+
+    // now that userPassword has concatenated all the strings together (that the user said they wanted to include), we can use it in a with the Math.random function, multiplying it by the full length of the concatenated userPassword string to generate a random string to then use in the for loop, which keeps it to the user-requested length
     for (i = 0; i < userLength; i++) {
-      password += userPassword[Math.floor(Math.random() * userLength)]
+      let randomPassword = Math.floor(Math.random() * userPassword.length);
+      password += userPassword[randomPassword];
     }
     return password;
     }
     
   }
-  console.log(password);
 
 
 // Get references to the #generate element
