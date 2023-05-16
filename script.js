@@ -42,9 +42,8 @@ function generatePassword() {
     if (userNumber) {
       userPassword += userPasswordChoices.number;
     }
-    var lengthOfPassword = trimFunction(userLength, userPassword);
     for (i = 0; i < userLength; i++) {
-      password += userPassword[Math.floor(Math.random() * lengthOfPassword)]
+      password += userPassword[Math.floor(Math.random() * userLength)]
     }
     return password;
     }
