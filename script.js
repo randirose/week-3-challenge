@@ -8,7 +8,7 @@ var userPasswordChoices = {
 };
 // generatePassword function that will create password based on user choices via prompts and confirmations
 function generatePassword() {
-
+  
 // first, I need to use a prompt to gather data from the user - how long they want their password to be btwn 8 and 128
   var userLength = prompt("How long do you want your password to be? Please enter a number between 8 and 128.")
 
@@ -17,13 +17,15 @@ function generatePassword() {
     alert("You have chosen an invalid length, please start over.");
     return;
     // return ends the function right here and put 'undefined' in the text box
-  }
+  
+    }
   else {
     // rest of the function will go here, once they've selected a valid password length
 
     // declare password variable as empty string, and another variable userPassword to concatenate property strings from above onto before randomizing
     var password = "";
     var userPassword = "";
+    
 
     // user confirms if they want lowercase letters in their password, if they do, empty string userPassword concatenates (adds to the end) the lowercase string (property of userPasswordChoices object)
     var userLowercase = confirm("Press 'OK' if you want to include lowercase letters in your password. Press 'CANCEL' if you do not");
@@ -40,8 +42,9 @@ function generatePassword() {
     if (userNumber) {
       userPassword += userPasswordChoices.number;
     }
+    var lengthOfPassword = userPassword.userLength;
     for (i = 0; i < userLength; i++) {
-      password += userPassword[Math.floor(Math.random() * userLength)]
+      password += userPassword[Math.floor(Math.random() * lengthOfPassword)]
     }
     return password;
     }
