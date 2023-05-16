@@ -22,7 +22,7 @@ function generatePassword() {
     var userLowercase = confirm("Press 'OK' if you want to include lowercase letters in your password. Press 'CANCEL' if you do not");
     if (userLowercase) {
       for (i=0; i<userLength; i++) {
-        userPasswordChoices.lowercase += result;
+        userPasswordChoices.lowercase += password[Math.floor(Math.random() * userLength)]
       }
     }
   }
