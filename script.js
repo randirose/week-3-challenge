@@ -4,7 +4,7 @@ var userPasswordChoices = {
   lowercase: "abcdefghijklmnopqrstuvqxyz",
   uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
   number: "0123456789",
-  specialChar: "!@#$%^&*"
+  specialChar: "!@#$%^&*_+}:?/><,."
 };
 // generatePassword function that will create password based on user choices via prompts and confirmations
 function generatePassword() {
@@ -73,3 +73,10 @@ function writePassword() {
 
 // Add event listener to generate button - will run everything once the generate button is clicked since the generatePassword function is called inside the writePassword function
 generateBtn.addEventListener("click", writePassword);
+
+// added this event listener to automatically select the generated password when you click inside the text box, so you can easily copy it
+var copyText = document.getElementById("password");
+var selectText = function() {
+  copyText.select();
+}
+copyText.addEventListener("focus", selectText);
