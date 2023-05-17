@@ -43,8 +43,8 @@ You can visit the published GitHub Pages and use the password generator yourself
 
 You can visit the GitHub repo here: https://github.com/randirose/week-3-challenge  
 
-    ![Screenshot of final generated password](assets/screenshot-created-password.png)
-    
+    ![Screenshot of final generated password](assets/images/screenshot-created-password.png)
+
 I wanted to include a video of the generator in action, but screencasting doesn't show the window prompts or confirmations.  
 
 ## Credits
