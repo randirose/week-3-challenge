@@ -6,6 +6,30 @@ For this module's challenge, we were asked to write code in JavaScript for a ran
 
 I learned a lot writing this code! The main portion was to write the "generatePassword" function that is called in the "writePassword" function that was provided for us in the starter code. There was a lot of trial and error to get to the final result but it was super fun and satisfying to get to the final result! I learned a lot about how to use the concatenation operator / method, the prompt and confirm commands for user inputs, and the math.random function. I also learned a little about event listeners even though we haven't quite gotten there in class yet and that code was provided for us (though I did add an additional event listener to this code).  
 
+## User Story  
+
+AS AN employee with access to sensitive data  
+I WANT to randomly generate a password that meets certain criteria  
+SO THAT I can create a strong password that provides greater security  
+
+## Acceptance Criteria  
+
+GIVEN I need a new, secure password  
+WHEN I click the button to generate a password  
+THEN I am presented with a series of prompts for password criteria  
+WHEN prompted for password criteria  
+THEN I select which criteria to include in the password  
+WHEN prompted for the length of the password  
+THEN I choose a length of at least 8 characters and no more than 128 characters  
+WHEN asked for character types to include in the password  
+THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters  
+WHEN I answer each prompt  
+THEN my input should be validated and at least one character type should be selected  
+WHEN all prompts are answered  
+THEN a password is generated that matches the selected criteria  
+WHEN the password is generated  
+THEN the password is either displayed in an alert or written to the page  
+
 
 ## Table of Contents
 
@@ -15,37 +39,23 @@ I learned a lot writing this code! The main portion was to write the "generatePa
 
 ## Usage
 
-You can visit the published GitHub Pages and use the password generator yourself here:  
+You can visit the published GitHub Pages and use the password generator yourself here: https://randirose.github.io/week-3-challenge/  
 
-You can visit the GitHub repo here:  
+You can visit the GitHub repo here: https://github.com/randirose/week-3-challenge  
 
     ```md
-    ![alt text](assets/images/screenshot.png)
+    ![Screenshot of final generated password](assets/screenshot-created-password.png)
     ```
+I wanted to include a video of the generator in action, but screencasting doesn't show the window prompts or confirmations.  
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
-## License
-
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
----
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
+- Starter code from course  
+- AskBCS on Slack  
 
 ## Features
 
-If your project has a lot of features, list them here.
+Additional features in my project include:  
+
+- Event listener at the end that, when the user "focuses" on the text area (clicks inside the text box) after generating their password, it will automatically select all the text to make it easy for the user to copy.
 
