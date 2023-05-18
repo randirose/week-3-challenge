@@ -59,4 +59,5 @@ I wanted to include a video of the generator in action, but screencasting doesn'
 Additional features in my project include:  
 
 - Event listener at the end that, when the user "focuses" on the text area (clicks inside the text box) after generating their password, it will automatically select all the text to make it easy for the user to copy.
+- "Error" alerts that kick the user out of the function if they do not input or select required criteria (password length no less than 8 characters and no more than 128, and at least one character type option).
 
