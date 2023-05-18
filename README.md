@@ -6,6 +6,8 @@ For this module's challenge, we were asked to write code in JavaScript for a ran
 
 I learned a lot writing this code! The main portion was to write the "generatePassword" function that is called in the "writePassword" function that was provided for us in the starter code. There was a lot of trial and error to get to the final result but it was super fun and satisfying to get to the final result! I learned a lot about how to use the concatenation operator / method, the prompt and confirm commands for user inputs, and the math.random function. I also learned a little about event listeners even though we haven't quite gotten there in class yet and that code was provided for us (though I did add an additional event listener to this code).  
 
+I, also, after attending office hours, realized I hadn't included functionality to my generatePassword function that added at least 1 random character from each type selected by the user (rather, it randomly selected from all types chosen by the user at the end). I added a math.random function within each 'if' statement that pulled one random character from that string (if chosen by user) and added it to the final password at the end. I then accounted for this by adjusting my userLength value at the end before the rest of the password is randomized in a 'for' loop. This was a great learning experience because I really was able to use my existing knowledge based on class work to add this functionality without much issue.
+
 ## User Story  
 
 AS AN employee with access to sensitive data  
@@ -50,7 +52,7 @@ I wanted to include a video of the generator in action, but screencasting doesn'
 ## Credits
 
 - Starter code from course  
-- AskBCS on Slack: helped fix incorrect sytax on this line, "let randomPassword = Math.floor(Math.random() * userPassword.length);". I was using the "userLength" variable instead of "userPassword.length".
+- AskBCS on Slack helped debug code: "let randomPassword = Math.floor(Math.random() * userPassword.length);". I was using the "userLength" variable instead of "userPassword.length".
 
 ## Features
 
