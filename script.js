@@ -34,7 +34,7 @@ function generatePassword() {
     // user confirms if they want each character type in their password, if they do, a function runs that adds a random single character from that string to the (final) password string, and then concatenates (adds to the end) the selected string (property of userPasswordChoices object) to the end of the userPassword string to be used in final randomization at the end
     var userLowercase = confirm("Press 'OK' if you want to include lowercase letters in your password. Press 'CANCEL' if you do not");
     if (userLowercase) {
-      var nextRandomItem = getRandomLowercase();
+      var randomItem1 = getRandomLowercase();
       function getRandomLowercase() {
         var raw = Math.random();
         var index = raw * userPasswordChoices.lowercase.length;
@@ -42,14 +42,14 @@ function generatePassword() {
         var item = userPasswordChoices.lowercase[index];
         return item;
       }
-      password += nextRandomItem;
+      password += randomItem1;
       userPassword += userPasswordChoices.lowercase;
       }
       
      
     var userUppercase = confirm("Press 'OK' if you want to include UPPERCASE letters in your password. Press 'CANCEL' if you do not");
     if (userUppercase) {
-      var nextRandomItem2 = getRandomUppercase();
+      var randomItem2 = getRandomUppercase();
       function getRandomUppercase() {
         var raw = Math.random();
         var index = raw * userPasswordChoices.uppercase.length;
@@ -57,14 +57,14 @@ function generatePassword() {
         var item = userPasswordChoices.uppercase[index];
         return item;
     }
-    password += nextRandomItem2;
+    password += randomItem2;
     userPassword += userPasswordChoices.uppercase;
     }
 
 
     var userNumber = confirm("Press 'OK' if you want to include numbers in your password. Press 'CANCEL' if you do not");
     if (userNumber) {
-      var nextRandomItem3 = getRandomNumber();
+      var randomItem3 = getRandomNumber();
       function getRandomNumber() {
         var raw = Math.random();
         var index = raw * userPasswordChoices.number.length;
@@ -72,13 +72,13 @@ function generatePassword() {
         var item = userPasswordChoices.number[index];
         return item;
     }
-    password += nextRandomItem3;
+    password += randomItem3;
     userPassword += userPasswordChoices.number;
     }
 
     var userSpecialChar = confirm("Press 'OK' if you want to include special characters in your password. Press 'CANCEL' if you do not");
     if (userSpecialChar) {
-      var nextRandomItem4 = getRandomSpecialChar();
+      var randomItem4 = getRandomSpecialChar();
       function getRandomSpecialChar() {
         var raw = Math.random();
         var index = raw * userPasswordChoices.specialChar.length;
@@ -86,7 +86,7 @@ function generatePassword() {
         var item = userPasswordChoices.specialChar[index];
         return item;
     }
-    password += nextRandomItem4;
+    password += randomItem4;
     userPassword += userPasswordChoices.specialChar;
     }
 
