@@ -52,6 +52,7 @@ I wanted to include a video of the generator in action, but screencasting doesn'
 ## Credits
 
 - Starter code from course  
+- Coursework code from Instructor (randomItem functions)
 - AskBCS on Slack helped debug code: "let randomPassword = Math.floor(Math.random() * userPassword.length);". I was using the "userLength" variable instead of "userPassword.length".
 
 ## Features
