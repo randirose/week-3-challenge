@@ -31,7 +31,7 @@ function generatePassword() {
     // alert to let user know they must choose at least 1 character type
     alert("Please choose at least 1 of the following options to include in your password. Press 'OK' to continue.");
 
-    // user confirms if they want each character type in their password, if they do, empty string userPassword concatenates (adds to the end) the selected string (property of userPasswordChoices object)
+    // user confirms if they want each character type in their password, if they do, a function runs that adds a random single character from that string to the (final) password string, and then concatenates (adds to the end) the selected string (property of userPasswordChoices object) to the end of the userPassword string to be used in final randomization at the end
     var userLowercase = confirm("Press 'OK' if you want to include lowercase letters in your password. Press 'CANCEL' if you do not");
     if (userLowercase) {
       var nextRandomItem = getRandomLowercase();
@@ -49,15 +49,45 @@ function generatePassword() {
      
     var userUppercase = confirm("Press 'OK' if you want to include UPPERCASE letters in your password. Press 'CANCEL' if you do not");
     if (userUppercase) {
-      userPassword += userPasswordChoices.uppercase;
+      var nextRandomItem2 = getRandomUppercase();
+      function getRandomUppercase() {
+        var raw = Math.random();
+        var index = raw * userPasswordChoices.uppercase.length;
+        index = Math.floor(index);
+        var item = userPasswordChoices.uppercase[index];
+        return item;
     }
+    password += nextRandomItem2;
+    userPassword += userPasswordChoices.uppercase;
+    }
+
+
     var userNumber = confirm("Press 'OK' if you want to include numbers in your password. Press 'CANCEL' if you do not");
     if (userNumber) {
-      userPassword += userPasswordChoices.number;
+      var nextRandomItem3 = getRandomNumber();
+      function getRandomNumber() {
+        var raw = Math.random();
+        var index = raw * userPasswordChoices.number.length;
+        index = Math.floor(index);
+        var item = userPasswordChoices.number[index];
+        return item;
     }
+    password += nextRandomItem3;
+    userPassword += userPasswordChoices.number;
+    }
+
     var userSpecialChar = confirm("Press 'OK' if you want to include special characters in your password. Press 'CANCEL' if you do not");
     if (userSpecialChar) {
-      userPassword += userPasswordChoices.specialChar;
+      var nextRandomItem4 = getRandomSpecialChar();
+      function getRandomSpecialChar() {
+        var raw = Math.random();
+        var index = raw * userPasswordChoices.specialChar.length;
+        index = Math.floor(index);
+        var item = userPasswordChoices.specialChar[index];
+        return item;
+    }
+    password += nextRandomItem4;
+    userPassword += userPasswordChoices.specialChar;
     }
 
     // if statement, adding condition that says if the user doesn't select any character types, they will receive an alert telling them they must choose at least 1 type, and kicks them out of the function
@@ -66,8 +96,8 @@ function generatePassword() {
       return;
     }
 
-    // now that userPassword has concatenated all the strings together (that the user said they wanted to include), we can use it in a with the Math.random function, multiplying it by the full length of the concatenated userPassword string to generate a random string to then use in the for loop, which keeps it to the user-requested length
-    let userLengthFinal = userLength - password.length;
+    // now that userPassword has concatenated all the strings together (that the user said they wanted to include)--and we've got at least 1 character of each type the user selected added onto the final password string-- we can use it (userPassword) with the Math.random function, multiplying it by the full length of the concatenated userPassword string to generate a random string to then use in the for loop, which keeps it to the user-requested length (minus the current length of the password to account for characters already added)
+    var userLengthFinal = userLength - password.length;
     for (i = 0; i < userLengthFinal; i++) {
       let randomPassword = Math.floor(Math.random() * userPassword.length);
       password += userPassword[randomPassword];
