@@ -34,8 +34,19 @@ function generatePassword() {
     // user confirms if they want each character type in their password, if they do, empty string userPassword concatenates (adds to the end) the selected string (property of userPasswordChoices object)
     var userLowercase = confirm("Press 'OK' if you want to include lowercase letters in your password. Press 'CANCEL' if you do not");
     if (userLowercase) {
+      var nextRandomItem = getRandomLowercase();
+      function getRandomLowercase() {
+        var raw = Math.random();
+        var index = raw * userPasswordChoices.lowercase.length;
+        index = Math.floor(index);
+        var item = userPasswordChoices.lowercase[index];
+        return item;
+      }
+      password += nextRandomItem;
       userPassword += userPasswordChoices.lowercase;
-      };
+      }
+      
+     
     var userUppercase = confirm("Press 'OK' if you want to include UPPERCASE letters in your password. Press 'CANCEL' if you do not");
     if (userUppercase) {
       userPassword += userPasswordChoices.uppercase;
@@ -56,14 +67,17 @@ function generatePassword() {
     }
 
     // now that userPassword has concatenated all the strings together (that the user said they wanted to include), we can use it in a with the Math.random function, multiplying it by the full length of the concatenated userPassword string to generate a random string to then use in the for loop, which keeps it to the user-requested length
-    for (i = 0; i < userLength; i++) {
+    let userLengthFinal = userLength - password.length;
+    for (i = 0; i < userLengthFinal; i++) {
       let randomPassword = Math.floor(Math.random() * userPassword.length);
       password += userPassword[randomPassword];
     }
     return password;
     }
+
+}
     
-  }
+  
 
 
 // Get references to the #generate element
