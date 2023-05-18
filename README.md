@@ -50,7 +50,7 @@ I wanted to include a video of the generator in action, but screencasting doesn'
 ## Credits
 
 - Starter code from course  
-- AskBCS on Slack  
+- AskBCS on Slack: helped fix incorrect sytax on this line, "let randomPassword = Math.floor(Math.random() * userPassword.length);". I was using the "userLength" variable instead of "userPassword.length".
 
 ## Features
 
